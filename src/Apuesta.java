@@ -120,7 +120,10 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * 
+ * @param evt Agrega un nuevo partido
+ */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido agregarpartido = new CrearPartido(this);
         agregarpartido.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -129,23 +132,37 @@ public class Apuesta extends javax.swing.JFrame {
         agregarpartido.setTitle("Agregar nuevo partido");
         agregarpartido.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
-
+/**
+ * 
+ * @param evt elimina un partido 
+ */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
-
+/**
+ * 
+ * @param evt resetea los partidos añadidos 
+ */
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
-
+/**
+ * 
+ * @param n1 Apuesta aletoria 1 
+ * @param n2 Apuesta aleatoria 2
+ * @return 
+ */
    
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
-    
+/**
+ * 
+ * @param evt Realiza la accion 
+ */    
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
 
@@ -172,7 +189,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
-    
+/**
+ * 
+ * @param partido Nombre del partido
+ */    
     public void partidoNuevo(String partido)
     {
         DefaultListModel modelonuevo = new DefaultListModel();
@@ -186,7 +206,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
-  
+/**
+ * 
+ * @param indice Numero del partido
+ */  
     public void borraPartido(int indice)
     {
         DefaultListModel modelonuevoquiniela = new DefaultListModel();
@@ -211,7 +234,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevoquiniela);
         this.listaResultados.setModel(modelonuevoresultados);
     }
-    
+/**
+ * 
+ * @param args Argumentos del Partido 
+ */    
    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
